@@ -28,7 +28,9 @@ void Produtor::contarEntidades(){
 
         if(arvore.classificar(entidade) == "Pessoa")
             pessoas++;
-
+            if(entidade.getFaixa() == true){
+                bool faixa_p = true;
+            }
         else
             carros++;
     }
