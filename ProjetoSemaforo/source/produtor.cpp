@@ -2,8 +2,10 @@
 #include "arvoreDecisao.hpp"
 #include "consumidor.hpp"
 #include "entidades.hpp"
+#include <iostream>
 #include <fstream>
 #include <random>
+#include <algorithm>
 
 double Produtor::gerarDouble(double minimo, double maximo){
  
@@ -78,22 +80,20 @@ void Produtor::contarEntidades(){
         else
             qntd_carros++;
     }
-
+    std::cout << "Quantidade de Carros: " << qntd_carros << std::endl << "Quantidade de pessoas: " << qntd_pessoas << std::endl;
 }
 
 // Método que repassa os dados adquiridos para o consumidor.
 Produtor::Dados Produtor::repassarInfo(){
 
-    dados.pessoa_prev = qntd_pessoas*10/20;
-    dados.carro_prev = qntd_carros*10/7;
+    dados.pessoa_prev = std::min(10, qntd_pessoas * 10 / 20);
+    dados.carro_prev = std::min(10, qntd_carros * 10 / 7);
 
-    if(qntd_pessoas > 20){
-        dados.pessoa_prev = 10;
-    }
+    std::cout << "Nivel de carros: "
+              << dados.carro_prev << '\n';
 
-    if(qntd_carros > 7){
-        dados.carro_prev = 10;
-    }
+    std::cout << "Nivel de pessoas: "
+              << dados.pessoa_prev << '\n';
 
     return dados;
 }
