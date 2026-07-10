@@ -9,8 +9,6 @@ class Consumidor{
         double categoria_p;
         double categoria_c;
         double comp;
-        bool faixaTemCarro;
-        bool faixaTemPessoa;
         double tempoVerde;
         double tempoVermelho;
     public:
