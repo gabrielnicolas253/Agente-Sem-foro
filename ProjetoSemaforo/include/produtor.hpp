@@ -1,21 +1,19 @@
-class Produtor
-{
+#ifndef PRODUTOR_HPP
+#define PRODUTOR_HPP
 
-private:
+#include <vector>
+#include "entidades.hpp"
+#include "arvoreDecisao.hpp"
 
-    std::vector<entidadeObservada> dadosTreinamento;
-
-    Arvore arvore;
+class Produtor {
 
 public:
+    struct Dados{
+        double pessoa_prev;
+        double carro_prev;
+    };
 
-    void carregarTreinamento(){
-
-    std::ifstream arquivo("dados/treinamento.csv");
-    
-    dadosTreinamento.push_back(objeto);
-
-    }
+    void carregarTreinamento();
 
     void treinar();
 
@@ -23,4 +21,28 @@ public:
 
     void contarEntidades();
 
+    Dados repassarInfo();
+
+    bool verificarFaixa();
+
+    double gerarDouble(double min, double max);
+
+    void criarAmbiente(int qntd);
+
+    private:
+
+    int qntd_pessoas;
+    int qntd_carros;
+
+    Dados dados;
+
+    std::vector<entidadeObservada> ambienteObservado;
+
+    std::vector<entidadeObservada> dadosTreinamento;
+
+
+    Arvore arvore;
+
 };
+
+#endif
