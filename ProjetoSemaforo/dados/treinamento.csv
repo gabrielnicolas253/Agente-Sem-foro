@@ -1,9 +1,9 @@
 altura,largura,velocidade,area,classe
 
-1.70,0.45,5,Pessoa
-1.80,0.50,4,Pessoa
-1.65,0.55,6,Pessoa
+1.70,0.45,5,1.5,Pessoa
+1.80,0.50,4,1.75,Pessoa
+1.65,0.55,6,1.8,Pessoa
 
-1.55,2.00,35,Carro
-1.60,2.10,40,Carro
-1.50,1.90,30,Carro
+1.55,2.00,35,8.3,Carro
+1.60,2.10,40,9,Carro
+1.50,1.90,30,9.4,Carro
