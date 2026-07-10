@@ -1,18 +1,37 @@
-#include "arvore.hpp"
+#include <string>
+#include <iostream>
+#include "arvoreDecisao.hpp"
+#include "entidades.hpp"
 
 void Arvore::treinar()
 {
     std::cout << "Treinamento concluído." << std::endl;
 }
 
-std::string Arvore::classificar(entidadeObservada entidade)
-{
+std::string Arvore::classificar(entidadeObservada entidade) {
 
-    if(entidade.getLargura() > 1.0)
-    {
+    if(entidade.getAltura() > 2.5){
         return "Carro";
+
+    } else {
+        
+        if(entidade.getVelocidade() > 20) {
+        return "Carro";
+
+        } else {
+
+            if(entidade.getLargura() > 2) {
+            return "Carro";
+
+            } else {
+
+                if(entidade.getArea() > 2) {
+                return "Carro";
+
+                } else {
+                    return "Pessoa";
+            }
+        }
     }
-
-    return "Pessoa";
-
+}
 }
