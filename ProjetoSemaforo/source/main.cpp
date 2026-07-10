@@ -1,15 +1,35 @@
 #include "entidades.hpp"
 #include "produtor.hpp"
 #include "consumidor.hpp"
+#include <string>
 #include <iostream>
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 
-int main(int argc, int argv[])
-{
+int main(int argc, char* argv[]){
+
+      if (argc < 2)
+    {
+        std::cout << "Uso: ./semaforo <quantidade_de_entidades>\n";
+        return 1;
+    }
+
+    int quantidade = std::stoi(argv[1]);
+   
+
+    if (quantidade <= 0)
+    {
+        std::cout << "A quantidade deve ser maior que zero.\n";
+        return 1;
+    }
+
+    std::srand(static_cast<unsigned int>(std::time(nullptr)));
+
     Produtor produtor;
     Consumidor consumidor;
 
-    produtor.criarAmbiente(int (argv[1]+0));
+    produtor.criarAmbiente(quantidade);
 
     produtor.carregarTreinamento();
 

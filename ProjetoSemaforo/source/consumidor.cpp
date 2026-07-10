@@ -14,32 +14,32 @@ void Consumidor::receberInfo(Produtor::Dados dadosRecebidos){
 void Consumidor::calcularSemaforo(){
 
     if (comp == 0){
-        tempoVermelho = 0.5;
         tempoVerde = 0.5;
+        tempoVermelho = 0.5;
     } else if (comp > 0 && comp <= 3) { // Há um pouco mais de carros;
-        tempoVermelho = 0.65;
-        tempoVerde = 0.35;
-    } else if (comp > 3 && comp <= 6) { // Há uma quantidade razoável a mais de carros;
-        tempoVermelho = 0.75;
-        tempoVerde = 0.25;
-    } else if (comp > 6 && comp < 10) { // Há muito mais carros;
-        tempoVermelho = 0.9;
-        tempoVerde = 0.1;
-    } else if (comp == 10) { // Não há pedestres;
-        tempoVermelho = 1;
-        tempoVerde = 0;
-    } else if (comp < 0 && comp >= -3) { // Há um pouco mais de pedestres;
-        tempoVermelho = 0.35;
         tempoVerde = 0.65;
-    } else if (comp < -3 && comp >= -6) { // Há uma quantidade razoável a mais de pedestres;
-        tempoVermelho = 0.25;
+        tempoVermelho = 0.35;
+    } else if (comp > 3 && comp <= 6) { // Há uma quantidade razoável a mais de carros;
         tempoVerde = 0.75;
-    } else if (comp < -6 && comp > -10) { // Há muito mais pedestres;
-        tempoVermelho = 0.9;
-        tempoVerde = 0.10;
-    } else if (comp == -10) { // Não há carros;
-        tempoVermelho = 0;
+        tempoVermelho = 0.25;
+    } else if (comp > 6 && comp < 10) { // Há muito mais carros;
+        tempoVerde = 0.9;
+        tempoVermelho = 0.1;
+    } else if (comp == 10) { // Não há pedestres;
         tempoVerde = 1;
+        tempoVermelho = 0;
+    } else if (comp < 0 && comp >= -3) { // Há um pouco mais de pedestres;
+        tempoVerde = 0.35;
+        tempoVermelho = 0.65;
+    } else if (comp < -3 && comp >= -6) { // Há uma quantidade razoável a mais de pedestres;
+        tempoVerde = 0.25;
+        tempoVermelho = 0.75;
+    } else if (comp < -6 && comp > -10) { // Há muito mais pedestres;
+        tempoVerde = 0.1;
+        tempoVermelho = 0.9;
+    } else if (comp == -10) { // Não há carros;
+        tempoVerde = 0;
+        tempoVermelho = 1;
     }
 
     tempoVermelho = tempoVermelho * INTERVALO;
