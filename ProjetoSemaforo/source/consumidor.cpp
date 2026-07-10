@@ -54,7 +54,7 @@ void Consumidor::semaforoExecucao(Produtor produtor){
 
     double tempoAleatorio = distrib(gen);
 
-    std::cout << "O semáforo ficará verde por " << tempoVerde << " minutos, e vermelho por " << tempoVermelho << "minutos." << std::endl;
+    std::cout << "O semáforo ficará verde por " << tempoVerde << " minutos, e vermelho por " << tempoVermelho << " minutos." << std::endl;
     if(produtor.verificarFaixa()){
         std::cout << "Pedestre foi detectado na faixa durante tempo verde no minuto " << tempoAleatorio << ". Semáforo ficará vermelho temporariamente." << std::endl;
     }
